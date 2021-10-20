@@ -53,7 +53,7 @@ export class MainService {
       this.age < 5 ? this.data.economy.priceOfOneKilometer = 0.5 - ((0.5 * 10 * 50) / 1000) : this.data.economy.priceOfOneKilometer = 0.5;
     }
 
-    return (this.data.economy.priceOfOneKilometer * this.numberOfKilometers) + this.data.economy.priceOfLuggage;
+    return parseFloat(((this.data.economy.priceOfOneKilometer * this.numberOfKilometers) + this.data.economy.priceOfLuggage).toFixed(2));
   }
 
   getAdvancedRates(): TFunc {
@@ -73,7 +73,7 @@ export class MainService {
       this.age < 8 ? this.data.advanced.priceOfOneKilometer = 2 - ((2 * 30) / 100) : this.data.advanced.priceOfOneKilometer = 2;
     }
 
-    return (this.data.advanced.priceOfOneKilometer * this.numberOfKilometers) + this.data.advanced.priceOfLuggage;
+    return parseFloat(((this.data.advanced.priceOfOneKilometer * this.numberOfKilometers) + this.data.advanced.priceOfLuggage).toFixed(2));
   }
 
   getLuxuryRates(): TFunc {
@@ -89,7 +89,7 @@ export class MainService {
       this.age < 16 ? this.data.luxury.priceOfOneKilometer = 4 - ((4 * 20) / 100) : this.data.luxury.priceOfOneKilometer = 4;
     }
 
-    return this.data.luxury.priceOfOneKilometer * this.numberOfKilometers;
+    return parseFloat((this.data.luxury.priceOfOneKilometer * this.numberOfKilometers).toFixed(2));
   }
 
   setValue(age: number, weight: number, quantity: number): void {
