@@ -1,0 +1,51 @@
+<form class="form">
+  <div class="form__list">
+    <label class="form__item">
+      <span class="form__item-title">Количество километров</span>
+      <input type="number" name="quantity" [(ngModel)]="formForCalculation.quantity">
+    </label>
+    <label class="form__item">
+      <span class="form__item-title">Возраст</span>
+      <input type="number" name="age" [(ngModel)]="formForCalculation.age">
+    </label>
+    <label class="form__item">
+      <span class="form__item-title">Багаж</span>
+      <input type="number" name="weight" [(ngModel)]="formForCalculation.weight">
+    </label>
+  </div>
+  <button type="button"
+    (click)="calculate()"
+    [disabled]="!formForCalculation.weight || !formForCalculation.quantity || !formForCalculation.weight"
+  >Рассчитать</button>
+</form>
+
+<div class="result">
+  <div class="result__title">Предложения:</div>
+
+  <div class="result__table">
+    <div class="result__airline">
+      <div class="result__airline-title">Аэрофлот</div>
+      <div *ngIf="rates.airline.economy">
+        Эконом: {{rates.airline.economy}} ₽
+      </div>
+      <div *ngIf="rates.airline.advanced">
+        Продвинутый: {{rates.airline.advanced}} ₽
+      </div>
+      <div *ngIf="rates.airline.luxury">
+        Люкс: {{rates.airline.luxury}} ₽
+      </div>
+    </div>
+    <div class="result__railway">
+      <div class="result__airline-title">РЖД</div>
+      <div *ngIf="rates.railway.economy">
+        Эконом: {{rates.railway.economy}} ₽
+      </div>
+      <div *ngIf="rates.railway.advanced">
+        Продвинутый: {{rates.railway.advanced}} ₽
+      </div>
+      <div *ngIf="rates.railway.luxury">
+        Люкс: {{rates.railway.luxury}} ₽
+      </div>
+    </div>
+  </div>
+</div>

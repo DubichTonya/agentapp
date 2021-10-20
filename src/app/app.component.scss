@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 140%;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  border: 1px solid #c1c1c1;
+}
+
+.form {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.form__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+
+  &-title{
+    width: 210px;
+    font-weight: bold;
+  }
+
+  input {
+    padding: 8px;
+    height: 38px;
+    width: 350px;
+    box-sizing: border-box;
+    border: 1px solid #c1c1c1;
+
+  }
+}
+
+button {
+  width: 100%;
+  padding: 8px 15px;
+  color: #fff;
+  background-color: dodgerblue;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(#1e4bff, 0.7);
+  }
+
+  &:disabled {
+    background-color: rgba(dodgerblue, 0.7);
+  }
+
+}
+
+.result__title {
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+.result__table {
+  border: 1px solid #c1c1c1;
+  border-bottom: none;
+}
+
+.result__railway,
+.result__airline {
+  div {
+    padding: 8px;
+    border-bottom: 1px solid #c1c1c1;
+  }
+}
+
+.result__airline-title,
+.result__railway-title {
+  font-weight: bold;
+  background-color: #dcdada;
+}
